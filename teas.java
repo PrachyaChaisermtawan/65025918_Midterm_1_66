@@ -1,65 +1,46 @@
-class teas {
-    public static void main(String[] args) {
-        System.out.println("\n");
-        System.out.println("Student1");
-        System.out.println("==================================================================");
-        Student student1 = new Student();
-        student1.showDetails();
-        System.out.println("==================================================================");
-        System.out.println("Change Properties Student1");
-        System.out.println("==================================================================");
-        student1.Name = "kingo";
-        student1.addmissionYear = 99;
-        student1.GPA = 3.45f;
-        student1.showDetails();
+public class teas {
+  public static void main(String[] args) {
+    Student student1 = new Student(001,"Keen",65,3.00);
+    Student student2 = new Student(002,"Teen",64,4.00);
+    Student student3 = new Student(003,"ceen",63,3.10);
+    Student student4 = new Student(004,"Been",62,2.98);
+    
+    
+    
+    student1.ShowDetails();
+    System.out.println("Student 1");
+    student2.ShowDetails();
+    System.out.println("Student 2");
+    student3.ShowDetails();
+    System.out.println("Student 3");
+    student4.ShowDetails();
+    System.out.println("Student 4");
+  
+  
+  }
+}  
+  
+  class Student{
+    String stName;
+    Integer stID,stAdyear;
+    double stGPA;
 
-        System.out.println("==================================================================");
-        System.out.println("\n");
-        System.out.println("Student2");
-        System.out.println("==================================================================");
-
-        Student student2 = new Student("ef", 65, 3.45f);
-        student2.showDetails();
-        System.out.println("==================================================================");
-        System.out.println("Change Properties Student2");
-        System.out.println("==================================================================");
-        student2.addmissionYear = 66;
-        student2.GPA = 3.99f;
-        student2.showDetails();
-        System.out.println("==================================================================");
-
-        System.out.println("Student2_ID : "+student2.GetId());
-
+    Student(int ID,String Name,int addmissionYear,double GPA){
+      stID = ID;
+      stName = Name;
+      stAdyear = addmissionYear;
+      stGPA = GPA; 
     }
-}
+    
+    
+    public void ShowDetails() {
+        
+        System.out.println("******************************************");
+        System.out.println("ID :"+stID);
+        System.out.println("Name :"+stName);
+        System.out.println("addmissionYear :"+stAdyear); 
+        System.out.println("GPA :"+stGPA);
 
-class Student {
-    private static int ID = 100001;
-    public String Name;
-    public int addmissionYear;
-    public float GPA;
 
-    private int Stu_ID = ID;
-
-    Student(){
-        ID += 1;
-        this.Name = "Null";
-        this.addmissionYear = 0;
-        this.GPA = 0f;
-    }
-
-    Student(String name,int amy,float GPA){
-        ID += 1;
-        this.Name = name;
-        this.addmissionYear = amy;
-        this.GPA = GPA;
-    }
-
-    public int GetId(){
-        return this.Stu_ID;
-    }
-
-    public void showDetails(){
-        System.out.println("Student ID : " + this.Stu_ID + "\nStudent_Name : " + this.Name + "\nStudent_addmissionYear : " + this.addmissionYear + "\nGPA_Student : " + this.GPA);
-    }
+  }
 }
