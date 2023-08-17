@@ -72,7 +72,7 @@ class Book{
 
   public void showDetails(){
     System.out.println("Author : "+author);
-    System.out.println("Number : "+pages);
+    System.out.println("Number of Pages : "+pages);
   }
     
   
